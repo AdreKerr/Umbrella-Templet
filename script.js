@@ -139,3 +139,81 @@ BodyImageChange[1].addEventListener("click", buttonStyle);
 // 5.
 //if you click the body's second picture change the font size to 60px
 BodyImageChange[1].addEventListener("click", ChangeSubheader);
+
+
+
+
+//practice questions
+
+//Input boxes
+//Grabbing values
+//onchanges
+//Eventlistener
+
+/*
+// Savign info based onChange
+let inputName = document.getElementById("name");
+let savedInfo = "";
+console.log(inputName);
+inputName.addEventListener("input", () =>{
+    //this is grabbing the input boxes value
+    //Innertext is only for html text tags
+    savedInfo = inputName.value;
+    console.log(savedInfo);
+})
+*/
+
+/*
+//2nd option on saving info from a input textbox
+//This varable is being used to grap the input value
+let inputName = document.getElementById("name");
+let inputEmail = document.querySelector("#email");
+//This varable is being used for the eventListener
+let subscribeButton = document.querySelector(".sub input");
+let savedNameInfo = "";
+let savedEmailInfo = "";
+
+subscribeButton.addEventListener("click",() =>{
+    savedNameInfo = inputName.value;
+    savedEmailInfo = inputEmail.value;
+    //
+    inputName.value = "";
+    inputEmail.value = "";
+    console.log(savedNameInfo);
+    console.log(savedEmailInfo);
+})
+*/
+
+//saving a list of personal infromation
+
+//this is going to hold my detail objects of information
+let subscribeList = [];
+//this is my object templete to push into the array later
+let personInfo = {
+    name: "", 
+    email: ""
+};
+//What's going to activate our input variables to grab the values?
+//This variable is goin to be used for my eventListener
+let subscribeButtonInfo = document.querySelector(".sub input");
+subscribeButtonInfo.addEventListener("click", grabNewsLetterInfo);
+//funciton to push info into the array
+function grabNewsLetterInfo(){
+    //This is going ot grap the unput text
+    //ONLY GRABA THE VALUE NOT THE NODE ELEMENT
+        let inputNameInfo = document.querySelector("#name");
+        let inputEmailInfo = document.querySelector("#email");
+    //gettting personal info
+        personInfo.name = inputNameInfo.value;
+        personInfo.email = inputEmailInfo.value;
+        console.log(personInfo);
+    //push and writing info
+        subscribeList.push(personInfo);
+        console.log(subscribeList);
+    //clearing out the input boxes
+    inputNameInfo.value = "";
+    inputEmailInfo.value = "";
+}//end funciton grap news letter info
+
+
+
